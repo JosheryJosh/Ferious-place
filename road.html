@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roadtrip</title>
+    <link rel="stylesheet" href="road.css">
+</head>
+<body>
+    <div class="musicImage">
+        <div id="chill2-container">
+            <img src="app animations/video 2.gif" alt="chill2 GIF" width="500" height="500" onclick="location.href='lofi.html'">
+        </div>
+        <div class="beachimg-container">
+            <img src="app animations/beach.jpg" alt="Beach image" width="500" height="500" onclick="location.href='summerMusic.html'">
+        </div>
+        <div class="chill3-container">
+            <img src="app animations/vid3.gif" alt="chill3 GIF" id="CHILL3" width="1470" height="100" onclick="toggleMusic1()">
+            <div class="signal pause" id="pauseSignal">❚❚</div>
+            <div class="signal resume" id="resumeSignal">►</div>
+            <div class="pause-overlay" id="pause-overlay" onclick="toggleMusic1()"></div>
+        </div>
+        <div class="audio-controls">
+            <button id="play-pause-button" onclick="toggleMusic1()">Play</button>
+            <button id="skip-button" onclick="skipTrack()">Skip</button>
+            <button id="back-button" onclick="backTrack()">Back</button>
+        </div>
+        <div class="settings">
+            <div class="repeat-setting">
+                <div class="repeat-text">repeat</div>
+            </div>
+        </div>
+    </div>
+    <div class="holloweenTitle animation-container" style="background-color: rgb(255, 102, 0);">
+        <img src="app animations/holloween title gif.gif" alt="Halloween Title GIF" onclick="location.href='window.html'">
+    </div>
+    <audio src="music and sound effects/Cockirie.mp3" id="musicM" autoplay loop></audio>
+    <script>
+        function toggleMusic1() {
+            var audio = document.getElementById("musicM");
+            var pauseSignal = document.getElementById("pauseSignal");
+            var resumeSignal = document.getElementById("resumeSignal");
+            var pauseOverlay = document.getElementById("pause-overlay");
+            var chill3Container = document.querySelector(".chill3-container img");
+
+            if (audio.paused) {
+                audio.play();
+                resumeSignal.style.opacity = 1;
+                setTimeout(function() {
+                    resumeSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0;
+                chill3Container.style.animationPlayState = "running";
+            } else {
+                audio.pause();
+                pauseSignal.style.opacity = 1;
+                setTimeout(function() {
+                    pauseSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0.5;
+                chill3Container.style.animationPlayState = "paused";
+            }
+        }
+
+        function toggleRepeat() {
+            var repeatSetting = document.querySelector(".repeat-setting");
+            if (repeatSetting.style.opacity === "1") {
+                repeatSetting.style.opacity = 0;
+            } else {
+                repeatSetting.style.opacity = 1;
+            }
+        }
+    </script>
+    <div class="section2" onclick="location.href='S2MWP.html'">
+        <h2 id="S2T">holloween→</h2>
+    </div>
+    <h1 id="titleSong1">Clockirie</h1>
+    <h2 id="titleSong2">Summer ride</h2>
+    <h2 id="titleSong3">Daunt</h2>
+</body>
+</html>

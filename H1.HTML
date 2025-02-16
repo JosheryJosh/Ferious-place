@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roadtrip</title>
+    <link rel="stylesheet" href="H1.CSS">
+</head>
+<body>
+    <div class="musicImage">
+        <div id="holloween2-container">
+            <img src="app animations/holloweenPart/holloween1.gif" alt="holloween2 GIF" width="500" height="500" onclick="location.href='H2.html'">
+        </div>
+        <div class="holloweenimg-container">
+            <img src="app animations/holloweenPart/scaryThing.gif" alt="holloween22 GIF" width="500" height="500" onclick="location.href='H3.html'">
+        </div>
+        <div class="holloween3-container">
+            <img src="app animations/holloweenPart/gray_house.gif" alt="holloween3 GIF" id="holloween3" width="1470" height="100" onclick="toggleMusic1()">
+            <div class="signal pause" id="pauseSignal">❚❚</div>
+            <div class="signal resume" id="resumeSignal">►</div>
+            <div class="pause-overlay" id="pause-overlay" onclick="toggleMusic1()"></div>
+        </div>
+        <div class="audio-controls">
+            <button id="play-pause-button" onclick="toggleMusic1()">Play</button>
+            <button id="skip-button" onclick="skipTrack()">Skip</button>
+            <button id="back-button" onclick="backTrack()">Back</button>
+        </div>
+        <div class="settings">
+            <div class="repeat-setting">
+                <div class="repeat-text">repeat</div>
+            </div>
+        </div>
+    </div>
+    <div class="holloweenTitle animation-container" style="background-color: rgb(255, 102, 0);">
+        <img src="app animations/holloween title gif.gif" alt="Halloween Title GIF" onclick="location.href='window.html'">
+    </div>
+    <audio src="app animations/holloweenPart/Holloween_road.mp3" id="musicM" autoplay loop></audio>
+    <script>
+        function toggleMusic1() {
+            var audio = document.getElementById("musicM");
+            var pauseSignal = document.getElementById("pauseSignal");
+            var resumeSignal = document.getElementById("resumeSignal");
+            var pauseOverlay = document.getElementById("pause-overlay");
+            var holloween3Container = document.querySelector(".holloween3-container img");
+
+            if (audio.paused) {
+                audio.play();
+                resumeSignal.style.opacity = 1;
+                setTimeout(function() {
+                    resumeSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0;
+                holloween3Container.style.animationPlayState = "running";
+            } else {
+                audio.pause();
+                pauseSignal.style.opacity = 1;
+                setTimeout(function() {
+                    pauseSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0.5;
+                holloween3Container.style.animationPlayState = "paused";
+            }
+        }
+
+        function toggleRepeat() {
+            var repeatSetting = document.querySelector(".repeat-setting");
+            if (repeatSetting.style.opacity === "1") {
+                repeatSetting.style.opacity = 0;
+            } else {
+                repeatSetting.style.opacity = 1;
+            }
+        }
+    </script>
+    <h1 id="titleSong1">Holloween road</h1>
+    <h2 id="titleSong2">everyday horror</h2>
+    <h2 id="titleSong3">Iinfrimortisalio</h2>
+</body>
+</html>

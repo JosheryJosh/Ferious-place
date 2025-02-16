@@ -1,0 +1,179 @@
+.holloween3-container {
+    width: 1470px;
+    height: 670px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#holloween3 {
+    width: 1470px;
+    height: 800px;
+}
+.holloween2-container {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    z-index: 0;
+}
+
+.signal {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; 
+    opacity: 0; 
+    transition: opacity 0.5s; 
+    z-index: 1;
+}
+
+.pause {
+    color: #ff0000;
+}
+
+.resume {
+    color: #00ff00;
+}
+
+.musicImage {
+    position: initial;
+    width: 100%;
+    height: 2000px;
+}
+
+.repeat-setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.repeat-icon {
+    width: 20px;
+    height: 20px;
+    color: #00ff0d;
+    border-radius: 50%;
+    margin-right: 10px;
+    visibility: visible;
+    top: 100px;
+    left: 100px;
+}
+
+.repeat-text {
+    color: #fff;
+    font-size: 16px;
+}
+
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1470px;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.2;
+    transition: opacity 0.5s;
+}
+
+.holloween2-container {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    width: 500px;
+    height: 500px;
+    visibility:visible;
+    
+}
+
+#titleSong3 {
+    font-size: 100px;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    color: aqua;
+}
+
+body {
+    background-color: rgb(5, 0, 97);
+    height: 5000px;
+    width: 1000px;
+}
+
+#holloweenimg-container:hover {
+    scale: 90%;
+    top: 1500px;
+    left: 100px;
+}
+
+#titleSong1 {
+    font-size: 70px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(130, 125, 0);
+    background-color: rgb(55, 64, 0);
+}
+
+.holloween2-container:hover {
+    scale: 90%;
+}
+
+#titleSong3 {
+    font-size: 50px;
+    position: absolute;
+    top: 1250px;
+    left: 850px;
+    width: 150px;
+    height: 70px;
+    color: rgb(81, 81, 81);
+    background-color: rgb(0, 0, 0);
+}
+#holloween2-container {
+    position: absolute;
+    top: 1400px;
+    left: 700px;
+}
+#titleSong2 {
+    font-size: 50px;
+    position: absolute;
+    top: 1250px;
+    left: 150px;
+    color: rgb(187, 0, 0);
+    background-color: rgb(0, 0, 0);
+}
+.holloweenimg-container{
+    position: absolute;
+    top:1400px;
+    left: 50px;
+}
+.holloweenimg-container:hover {
+    scale: 90%;
+}
+#holloween2-container:hover {
+    scale: 90%;
+}
+.holloweenTitle {
+    bottom:0px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+}
+.holloweenTitle-animation-container {
+    bottom: 0px;
+    left: 100px;
+    width:500px;
+    height: 500px;
+}
+.holloweenTitle:hover {
+    scale:90%;
+}
+#S2T {
+    position: absolute;
+    font-size: 100px;
+    top: 90px;
+    left: 120px;
+}
+.section2:hover {
+    scale: 90%;
+}

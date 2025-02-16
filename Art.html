@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeriousPlace's art</title>
+    <link rel="stylesheet" href="Art_syle.css">
+</head>
+<body>
+    <h1 id="SDP">sketches, drawings, and paintings</h1>
+    <h1 id="Digital">Digital art</h1>
+    <h1 id="artTitle">FeriousPlace's art</h1>
+    <div class="side">
+        <h1>Do you wonder how I make the digital art?
+            then check out the digital art with FeriousPlace in the links below!
+        </h1>
+        <a href="">YouTube</a> <!--make sure that you put the actual URL for the page-->
+        <div class="holloweenTitle animation-container" style="background-color: rgb(255, 102, 0);">
+            <img src="app animations/holloween title gif.gif" width="200" height="200" alt="Halloween Title GIF" onclick="location.href='window.html'">
+        </div>
+    </div>
+    <div class="scroll-container" id="scroll-container">
+        <div class="scroll-item">Item 1</div>
+        <div class="scroll-item">Item 2</div>
+        <div class="scroll-item">Item 3</div>
+        <div class="scroll-item">Item 4</div>
+        <div class="scroll-item">Item 5</div>
+        <div class="scroll-item">Item 6</div>
+        <div class="scroll-item">Item 7</div>
+        <div class="scroll-item">Item 8</div>
+        <div class="scroll-item">Item 9</div>
+        <div class="scroll-item">Item 10</div>
+    </div>
+    <div class="scroll-container2" id="scroll-container2">
+        <div class="scroll-item">
+            <h1 id="D1T">Kingdom of Plague</h1>
+            <img src="digital_art/digital_art1.png" alt="Kingdom of Plague" id="D1">
+        </div>
+        <div class="scroll-item">Item 2</div>
+        <div class="scroll-item">Item 3</div>
+        <div class="scroll-item">Item 4</div>
+        <div class="scroll-item">Item 5</div>
+        <div class="scroll-item">Item 6</div>
+        <div class="scroll-item">Item 7</div>
+        <div class="scroll-item">Item 8</div>
+        <div class="scroll-item">Item 9</div>
+        <div class="scroll-item">Item 10</div>
+    </div>
+    <audio id="AudioForArt" preload="auto"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let container = document.getElementById('scroll-container');
+            let container2 = document.getElementById('scroll-container2');
+            let scrollAmount = 1010;
+            let currentIndex = 1;
+            let audio = document.getElementById('AudioForArt');
+            let audioFiles = [
+                'digital_art/bleak1.mp3',
+                'digital_art/stars.mp3',
+                'digital_art/Epic.mp3',
+                'digital_art/night.mp3',
+                'digital_art/orchestraE.mp3',
+                'digital_art/Unknown.mp3',
+                'digital_art/Frosted.mp3',
+                'digital_art/Fires.mp3',
+                'digital_art/wonders.mp3',
+                'digital_art/motivation.mp3'
+            ];
+
+            function playAudioForCurrentItem() {
+                audio.src = audioFiles[currentIndex - 1];
+                audio.play();
+            }
+
+            function alignToItem(container) {
+                let scrollPosition = container.scrollLeft;
+                let nearestIndex = Math.round(scrollPosition / scrollAmount);
+                container.scrollTo({ left: nearestIndex * scrollAmount, behavior: 'smooth' });
+            }
+
+            function scrollItems() {
+                container.scrollTo({ left: (currentIndex - 1) * scrollAmount, behavior: 'smooth' });
+                container2.scrollTo({ left: (currentIndex - 1) * scrollAmount, behavior: 'smooth' });
+                setTimeout(() => alignToItem(container), 600);
+                setTimeout(() => alignToItem(container2), 600);
+                
+                audio.pause();
+                playAudioForCurrentItem();
+
+                if (currentIndex === 10) {
+                    setTimeout(() => {
+                        currentIndex = 1;
+                        scrollItems();
+                    }, 10000); 
+                } else {
+                    currentIndex = (currentIndex % 10) + 1;
+                }
+            }
+
+            setInterval(scrollItems, 15000);
+        });
+    </script>
+</body>
+</html>
+

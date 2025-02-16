@@ -1,0 +1,74 @@
+.side {
+    width: 467px;
+    height: 2000px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgb(238, 0, 255);
+}
+body {
+    background-color: rgb(0, 0, 0);
+    height: 2000px;
+}
+#artTitle {
+    font-size: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.scroll-container {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    width: 1000px;
+    height: 1500px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.scroll-item {
+    display: inline-block;
+    width: 1000px;
+    height: 1000px;
+    margin-right: 10px;
+    background-color: lightgray;
+}
+.scroll-item img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+}
+.holloweenTitle{
+    position: absolute;
+    top: 150px;
+    right: 10px;
+}
+.holloweenTitle:hover {
+  scale: 90%;
+}
+.scroll-container2 {
+    position: absolute;
+    top: 1500px;
+    left: 0px;
+    width: 1000px;
+    height: 700px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+#Digital {
+    position: absolute;
+    top: 1300px;
+    left: 0px;
+    color: aqua;
+}
+#SDP {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    color: white;
+}
