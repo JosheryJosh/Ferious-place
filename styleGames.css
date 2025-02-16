@@ -1,0 +1,54 @@
+.list {
+    font-weight: 0;
+    position: absolute;
+    top: 700px;
+    left: 100px;
+    background-color: rgb(25, 135, 0);
+}
+#title {
+    position: absolute;
+    margin-top: 10px;
+    padding: 0px;
+    top: 10px;
+    left: 200px;
+    font-weight: 200;
+    color: rgb(0, 255, 85);
+}
+.titleS {
+    position: absolute;
+    margin-top: 0px;
+    padding: 0px;
+    top: 50px;
+    left: 110px;
+    font-weight: 200;
+    color: rgb(0, 255, 238);
+}
+body {
+    background-color: rgb(76, 0, 255);
+}
+.holloweenTitle {
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.holloweenTitle:hover {
+    scale: 90%;
+}
+#PlagueGames {
+    position: absolute;
+    top: 505px;
+    left: 135px;
+    background-color: rgb(48, 48, 48);
+}
+#titleOplague {
+    position: absolute;
+    top: 550px;
+    left: 210px;
+    color: rgb(255, 255, 255)
+}
+#linkP {
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    color: rgb(255, 255, 255);
+}

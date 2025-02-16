@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Music</title>
+    <link rel="stylesheet" href="styleSummer.css">
+</head>
+<body>
+    <div class="musicImage">
+        <div class="chill2-container">
+            <img src="app animations/video 2.gif" alt="chill2 GIF" width="550" height="400" onclick="location.href='lofi.html'">
+        </div>
+        <div class="chill3-container">
+            <img src="app animations/vid3.gif" alt="chill3 GIF" width="500" height="400" onclick="location.href='road.html'">
+        </div>
+        <div id="beachimg-container">
+            <img src="app animations/beach.jpg" alt="Beach image" onclick="toggleMusic1()">
+            <div class="signal pause" id="pauseSignal">❚❚</div>
+            <div class="signal resume" id="resumeSignal">►</div>
+            <div class="pause-overlay" id="pause-overlay" onclick="toggleMusic1()"></div>
+        </div>
+        <div class="audio-controls">
+            <button id="play-pause-button" onclick="toggleMusic1()">Play</button>
+            <button id="repeat-button" onclick="toggleRepeat()">Repeat</button>
+            <button id="skip-button" onclick="skipTrack()">Skip</button>
+            <button id="back-button" onclick="backTrack()">Back</button>
+        </div>
+        <div class="settings">
+            <div class="repeat-setting">
+                <div class="repeat-icon">🔁</div>
+                <div class="repeat-text">repeat</div>
+            </div>
+        </div>
+    </div>
+    <div class="holloweenTitle animation-container" style="background-color: rgb(255, 102, 0);">
+        <img src="app animations/holloween title gif.gif" alt="Halloween Title GIF" onclick="location.href='window.html'">
+    </div>
+    <audio src="music and sound effects/Summer ride.mp3" id="musicM" autoplay loop></audio>
+
+    <script>
+        function toggleMusic1() {
+            var audio = document.getElementById("musicM");
+            var pauseSignal = document.getElementById("pauseSignal");
+            var resumeSignal = document.getElementById("resumeSignal");
+            var pauseOverlay = document.getElementById("pause-overlay");
+            if (audio.paused) {
+                audio.play();
+                resumeSignal.style.opacity = 1;
+                setTimeout(function() {
+                    resumeSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0;
+            } else {
+                audio.pause();
+                pauseSignal.style.opacity = 1;
+                setTimeout(function() {
+                    pauseSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0.5;
+            }
+        }    
+        function toggleRepeat() {
+            var repeatSetting = document.querySelector(".repeat-setting");
+            if (repeatSetting.style.opacity === "1") {
+                repeatSetting.style.opacity = 0;
+            } else {
+                repeatSetting.style.opacity = 1;
+            }
+        }
+    </script>
+    <h1 id="titleSong1">Summer ride</h1>
+    <h2 id="titleSong2">Daunt</h2>
+    <h2 id="titleSong3">Cockirei</h2>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="S2MWP.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titleMain">Holloween songs</title>
+</head>
+<body>
+    <div class="holloweenTitle animation-container" style="background-color: rgb(255, 102, 0);">
+        <img src="app animations/holloween title gif.gif" width="200" height="200" alt="Halloween Title GIF" onclick="location.href='window.html'">
+    </div>
+    <div class="SectionTitle">
+        <h1 id="TITLe">Holloween</h1>
+        <div id="chillN-container">
+            <img src="S3Music/Piano.png" alt="chill2 GIF" width="500" height="500" id="Piano" onclick="location.href='S3.HTML'">
+        </div>
+        <div id="chill1-container">
+            <img src="app animations/holloweenPart/gray_house.gif" alt="chill2 GIF" width="500" height="500" onclick="location.href='H1.HTML'">
+        </div>
+        <div id="chill22-container">
+            <img src="app animations/holloweenPart/holloween1.gif" alt="chill2 GIF" width="500" height="500" onclick="location.href='H2.html'">
+        </div>
+        <div id="chill2-container">
+            <img src="app animations/holloweenPart/scaryThing.gif" alt="chill3 GIF" width="500" height="500" onclick="location.href='H3.html'">
+        </div>
+        <div class="chill4-container">
+            <img src="app animations/lofi city3.gif" alt="chill4 GIF" id="CHILL4" width="750" height="500" onclick="toggleMusic1()">
+            <div class="signal pause" id="pauseSignal">❚❚</div>
+            <div class="signal resume" id="resumeSignal">►</div>
+            <div class="pause-overlay" id="pause-overlay" onclick="toggleMusic1()"></div>
+        </div>
+    </div>
+    <audio src="music and sound effects/Universe Bleak.mp3" id="musicM" autoplay loop></audio>
+    <script>
+        function toggleMusic1() {
+            var audio = document.getElementById("musicM");
+            var pauseSignal = document.getElementById("pauseSignal");
+            var resumeSignal = document.getElementById("resumeSignal");
+            var pauseOverlay = document.getElementById("pause-overlay");
+            var chill3Container = document.querySelector(".chill3-container img");
+
+            if (audio.paused) {
+                audio.play();
+                resumeSignal.style.opacity = 1;
+                setTimeout(function() {
+                    resumeSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0;
+                chill3Container.style.animationPlayState = "running";
+            } else {
+                audio.pause();
+                pauseSignal.style.opacity = 1;
+                setTimeout(function() {
+                    pauseSignal.style.opacity = 0;
+                }, 500);
+                pauseOverlay.style.opacity = 0.5;
+                chill3Container.style.animationPlayState = "paused";
+            }
+        }
+
+        function toggleRepeat() {
+            var repeatSetting = document.querySelector(".repeat-setting");
+            if (repeatSetting.style.opacity === "1") {
+                repeatSetting.style.opacity = 0;
+            } else {
+                repeatSetting.style.opacity = 1;
+            }
+        }
+    </script>   
+</body>
+</html>
